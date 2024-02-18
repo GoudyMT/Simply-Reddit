@@ -3,16 +3,9 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 // Adjusted fetchPosts thunk
 export const fetchPosts = createAsyncThunk(
   'posts/fetchPosts',
-  async (_, { getState }) => {
-    const { search, categories } = getState();
-    let subreddit = categories.selectedCategory || 'all'; // Default to 'all' if no category selected
-    let url = `https://www.reddit.com/r/${subreddit}.json`;
-
-    if (search.searchTerm) {
-      url += `?q=${encodeURIComponent(search.searchTerm)}`;
-    }
-
-    const response = await fetch(url);
+  async ({ searchTerm }, thunkAPI) => {
+    // Modify the URL to use Reddit's search endpoint and include the search term
+    const response = await fetch(`https://www.reddit.com/search.json?q=${encodeURIComponent(searchTerm)}`);
     const json = await response.json();
     return json.data.children.map((post) => post.data);
   }

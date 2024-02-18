@@ -2,10 +2,10 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const PostPreview = ({ post }) => {
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const openPostDetail = () => {
-    history.push(`/posts/${post.id}`);
+    navigate(`/posts/${post.id}`);
   };
 
   return (

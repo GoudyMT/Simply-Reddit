@@ -1,17 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
-import CategoryFilter from './CategoryFilter';
-import logo from '../images/simply-logo.jpeg'
+import logo from '../images/simply-logo.png'
 
 const Header = () => {
   return (
     <header>
       <Link to="/">
-        <img src={logo} alt="Simply Logo"></img>
+        <img src={logo} alt="Simply Logo" className='logo'></img>
       </Link>
       <SearchBar />
-      <CategoryFilter />
     </header>
   );
 };
