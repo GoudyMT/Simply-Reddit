@@ -5,6 +5,7 @@ import Header from './components/Header';
 import PostList from './components/PostList';
 import PostDetail from './components/PostDetail';
 import SearchResults from './components/SearchResults';
+import SubredditPage from './components/SubredditPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<PostList />} />
             <Route path="/posts/:postId" element={<PostDetail />} />
             <Route path="/search" element={<SearchResults />} />
+            <Route path="/r/:subredditName" element={<SubredditPage />} />
           </Routes>
         </main>
       </div>

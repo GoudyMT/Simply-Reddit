@@ -1,15 +1,24 @@
+/* Base styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* App container */
 .App {
   text-align: center;
 }
 
+/* Header styles */
 header {
-  background-color: #D6D7B0;
+  background-color: #005f73; /* Updated color */
   padding: 20px;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .logo {
@@ -17,27 +26,163 @@ header {
   height: auto;
 }
 
-input{
-  border-radius: 10px;
-  background-color: #4BC2A6;
-  height: 30px;
-  width: 200px;
-  text-align: center;
+/* Input field - focus highlight */
+input {
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background-color: #ffffff;
+  height: 40px;
+  width: 250px;
+  padding: 0 15px;
+  color: #333;
+  transition: border 0.3s, box-shadow 0.3s;
+  margin: 5px;
 }
 
-main {
-  margin: 20px;
+input:focus {
+  outline: none;
+  border: 2px solid #00b4d8; /* Highlight color */
+  box-shadow: 0 0 8px rgba(0, 180, 216, 0.5);
 }
 
-header select {
+/* Button styles */
+button, .feeling-lucky-btn {
+  background-color: #00b4d8;
+  border: none;
+  height: 40px;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover, .feeling-lucky-btn:hover {
+  background-color: #0077b6; /* Darker shade */
+  transform: translateY(-2px);
+}
+
+/* Post list and previews */
+.postList {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
   padding: 10px;
-  margin-left: 20px; /* Adjust as needed */
-  border: 1px solid #ccc;
+}
+
+.post-preview {
+  background: #e0fbfc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.2s;
+}
+
+.post-preview:hover {
+  box-shadow: 0 5px 15px rgba(0, 119, 182, 0.2);
+  transform: translateY(-5px);
+}
+
+.post-image-container {
+  margin-right: 16px;
+}
+
+.post-image-container img {
+  max-width: 120px;
   border-radius: 4px;
-  font-size: 16px;
 }
 
-/* Style for the dropdown options */
-header select option {
-  padding: 10px;
+.post-details {
+  flex: 1;
+}
+
+.post-title {
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.post-meta {
+  color: #666;
+  font-size: 14px;
+}
+
+.post-meta .post-author {
+  margin-right: 10px;
+}
+
+.post-meta .post-comments {
+  display: inline-block;
+  background: #eee;
+  border-radius: 15px;
+  padding: 2px 8px;
+}
+
+.postDetail {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px; /* Adjust the width as needed */
+  word-wrap: break-word;
+}
+
+.postDetail h2 {
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.postDetail img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+.postDetail p {
+  color: #666666;
+  line-height: 1.6;
+}
+
+.comments {
+  margin-top: 20px;
+}
+
+.comment-card {
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  padding: 12px;
+  text-align: left;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.comment-profile-picture {
+  width: 70px;
+  height: auto;
+  border-radius: 50%; /* Makes the image round */
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.comment-author {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.comment-body {
+  color: #333;
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
 }

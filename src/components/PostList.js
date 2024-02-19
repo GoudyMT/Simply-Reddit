@@ -6,7 +6,7 @@ const PostList = () => {
   const posts = useSelector((state) => state.posts.posts);
 
   return (
-    <div>
+    <div className='postList'>
       {posts.map((post) => (
         <PostPreview key={post.id} post={post} />
       ))}

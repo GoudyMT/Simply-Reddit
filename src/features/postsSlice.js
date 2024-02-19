@@ -11,6 +11,16 @@ export const fetchPosts = createAsyncThunk(
   }
 );
 
+export const fetchPostsFromSubreddit = createAsyncThunk(
+  'posts/fetchPostsFromSubreddit',
+  async (subredditName) => {
+    const response = await fetch(`https://www.reddit.com/r/${subredditName}/hot.json`);
+    const json = await response.json();
+    return json.data.children.map((post) => post.data);
+  }
+);
+
+
 const postsSlice = createSlice({
   name: 'posts',
   initialState: { posts: [], status: 'idle', error: null },
