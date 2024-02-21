@@ -154,7 +154,7 @@ button:hover, .feeling-lucky-btn:hover {
 .comment-card {
   background: #f9f9f9;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   margin-bottom: 16px;
   padding: 12px;
   text-align: left;
@@ -185,4 +185,78 @@ button:hover, .feeling-lucky-btn:hover {
   padding: 8px;
   border-radius: 4px;
   box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+
+  input {
+    width: auto; /* Make input field take more space */
+  }
+
+  button, .feeling-lucky-btn {
+    width: auto; /* Adjust button width */
+    margin: 10px 0; /* Add some margin to separate buttons when stacked */
+  }
+
+  .post-preview, .postDetail {
+    /* Make elements more compact for small screens */
+    padding: 12px;
+    margin: 10px auto;
+    width: 400px; /* Use more of the screen width */
+  }
+
+  .post-image-container img {
+    /* Adjust image size in post previews */
+    max-width: 80px; /* Smaller images on small screens */
+  }
+
+  .comment-card {
+    /* Adjust comment card layout */
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .comment-profile-picture {
+    /* Adjust profile picture size in comments */
+    width: 50px; /* Smaller profile pictures on small screens */
+    margin-right: 5px;
+  }
+
+  .comment-author, .comment-body {
+    /* Adjust font sizes for readability */
+    font-size: 12px;
+  }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+  header{
+  font-size: 70%;
+  }
+
+  input{
+    width: 150px;
+  }
+  
+  .post-details{
+    width: auto;
+  }
+
+  .post-image-container img {
+    max-width: 60px; /* Even smaller images for very small screens */
+  }
+
+  .comment-profile-picture {
+    width: 40px; 
+  }
+
+  .post-preview, .postDetail {
+    font-size: 70%;
+    width: 250px; 
+  }
 }
